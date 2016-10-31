@@ -1,0 +1,66 @@
+using System;
+using System.Collections;
+
+namespace _funcion_mostrar_pila
+{
+	class mostrar
+	{
+		/// <summary>
+		/// Ejercicio 11.2 crear una funcion mostrarpila()
+		/// </summary>
+		public static Stack mipila = new Stack();
+
+		public void menu()
+		{
+			Console.WriteLine("1-> Agregar elementos");
+			Console.WriteLine("2-> Mostrar elementos");
+			Console.WriteLine("3-> Salir");
+		}
+		public void agregar()
+		{
+			Console.Write("Ingrese valor: ");
+			string valor = Console.ReadLine();
+			mipila.Push(valor);
+		}
+
+		public void mostrarpila() //funcion mostrar pila
+		{
+			Console.WriteLine("Elementos en la pila");
+			foreach (var dato in mipila)
+			{
+				Console.WriteLine("--->" + dato);
+			}
+			Console.ReadKey();
+		}
+
+	
+		public static void Main(string[] args)
+		{
+
+			mostrar m = new mostrar();
+			int opcion;
+			do
+			{
+				m.menu();
+				Console.Write("opcion: ");
+				opcion = int.Parse(Console.ReadLine());
+				switch (opcion)
+				{
+					case 1:
+						m.agregar();
+						Console.WriteLine("Elemento Agregado");
+						Console.ReadKey();
+						break;
+
+					case 2:
+						m.mostrarpila();
+						break;
+					default:
+						Console.WriteLine("fuera de rango");
+						break;
+				}
+				Console.Clear();
+			} while (opcion != 3);
+		}
+	}
+}
