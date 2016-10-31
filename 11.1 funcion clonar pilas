@@ -1,0 +1,48 @@
+using System;
+using System.Threading;
+using System.Collections;
+namespace mili
+{
+	public class Pila
+	{
+
+		/*Ejercicio 11.1 de pilas.pdf*/
+
+
+
+		public static void Main(string[] args)
+		{
+			Stack pila1 = new Stack();
+			Stack pila2 = new Stack();
+			Stack pila3 = new Stack();
+
+
+			///INGRESAR ELEMENTOS A LA PILA
+			pila1.Push(10);
+			pila1.Push(20);
+			pila1.Push(30);
+
+			foreach (int item in pila1)
+			{
+				pila3.Push(item);
+			}
+			foreach (int item in pila3)
+			{
+				pila2.Push(item);
+			}
+			Console.WriteLine("PILA CLONADA");
+
+			Console.WriteLine("PILA UNO");
+			foreach (int item1 in pila1)
+			{
+				Console.WriteLine(item1);
+			}
+			Console.WriteLine("PILA DOS");
+			foreach (int item in pila2)
+			{
+				Console.WriteLine(item);
+			}
+			Console.ReadKey();
+		}
+	}
+}
