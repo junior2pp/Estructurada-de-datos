@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Internet
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            /*TextWriter archivo = new StreamWriter("datos1.txt",true);
+            Random r = new Random();
+            int n = r.Next(100,200);
+            string producto;
+            int precio;
+
+            for (int i = 0; i < n; i++)
+            {
+                producto = Convert.ToChar(r.Next(65,90)).ToString();
+                precio = r.Next(0,100);
+                archivo.WriteLine(i + ", " + producto + ", " + precio);  
+            }
+            Console.WriteLine("datos guardados..");
+            Console.ReadKey();
+            archivo.Close();*/
+
+            StreamReader lectura;
+
+            string[] campos = new string[3];
+
+            char[] separador = {','};
+
+            string cadena;
+            bool encontrado = false;
+
+            lectura = File.OpenText("datos1.txt");
+            cadena = lectura.ReadLine();  // 0,G,81
+            //Console.Write("Ingrese id: ");
+            string id = Console.ReadLine();
+            int cont = 0;
+            int conte = 0;
+            int conti = 0;
+            int conto = 0;
+            int contu = 0;
+
+            while (cadena != null ) //&& encontrado == false)
+            {
+                campos = cadena.Split(separador); // {0}= 0 {1} = G {2} = 81
+                if (campos[1].Trim().Equals("A"))  //0,G,81
+                {
+                    /*Console.WriteLine("ID "+campos[0].Trim());
+                    Console.WriteLine("PRODUCTO: "+campos[1].Trim());
+                    Console.WriteLine("PRECIO "+campos[2].Trim());*/
+                    //encontrado = true;
+                    cont++;
+                }
+                if (campos[1].Trim().Equals("E"))
+                {
+                    conte++;
+                }
+                if (campos[1].Trim().Equals("I"))
+                {
+                    conti++;
+                }
+                if (campos[1].Trim().Equals("O"))
+                {
+                    conto++;
+                }
+                if (campos[1].Trim().Equals("U"))
+                {
+                    contu++;
+                }
+
+                //else
+                //{
+                cadena = lectura.ReadLine();
+                //}
+            }
+
+            if (encontrado == false)
+            {
+                //Console.WriteLine("NO existe ese id");
+            }
+            Console.WriteLine("Existen A = {0} E={1} I={2} O ={3} U = {4} ",cont,conte,conti,conto,contu);
+
+            lectura.Close();
+
+            Console.ReadKey();
+                      
+        }
+    }
+}
