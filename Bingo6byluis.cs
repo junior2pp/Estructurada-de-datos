@@ -21,15 +21,16 @@ namespace bingo
                 for (int j = 0; j < 10; j++)
                 {
                     Console.SetCursorPosition((i * 4) + 40, (j * 1) + 5);
-                    Console.Write(matriz1[i, j]);
+                    
                     Console.ForegroundColor = ConsoleColor.White;
                     foreach (int item in pila1)
                     {
-                        if (matriz1[i, j]+1 == item)
+                        if (matriz1[i, j] == item)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                         }
                     }
+                    Console.Write(matriz1[i, j]);
                     
 
 
