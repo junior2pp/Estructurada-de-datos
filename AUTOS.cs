@@ -8,6 +8,7 @@ namespace ARCHIVOSSS
 {
     class Program
     {
+        //// SI VA A CONSERVAR LA RUTA DEBE CREAR UNA CARPETA LLAMADA ARCHIVOS EN EL DISCO LOCAL "C"
         static string ruta = "c:\\archivo\\autos.bin"; 
         static string nserie, nombrepiloto,cedulapiloto,nombrecopiloto,cedulacopiloto,numeroplaca,marcaauto, fabricante, color,tipocategoria;
         static bool encontrado;
