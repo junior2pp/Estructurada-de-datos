@@ -479,6 +479,7 @@ namespace ARCHIVOSSS
                     //escribiendo
                     bw.Write(nserie + "," + nombrepiloto + ","+cedulapiloto + ","+ nombrecopiloto + "," + cedulacopiloto + ","+numeroplaca + ","+marcaauto+ "," + tipocategoria);
                     bw.Close();
+                    fs.Close();
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("++++++REGISTRO AGREGADO CORRECTAMENTE+++++");
                     Console.ForegroundColor = ConsoleColor.White;
